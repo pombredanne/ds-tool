@@ -1,4 +1,8 @@
 #!/usr/bin/env coffee
 console.log """
 Please rename your dataset!!!!
+<script>
+  window.content.trigger('tool:installed')
+</script>
+
 """
