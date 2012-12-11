@@ -1,6 +1,8 @@
 #!/usr/bin/env coffee
 {exec} = require 'child_process'
 
+process.cwd '/home/newdataset'
+
 exec './install-extras.sh', (err, stdout, stderr) ->
   console.log """
   Please rename your dataset!!!!
