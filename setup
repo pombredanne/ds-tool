@@ -5,7 +5,6 @@ exec './install-extras.sh', (err, stdout, stderr) ->
   console.log """
   Please rename your dataset!!!!
   <script>
-    console.log("From your tool: #{err}, #{stdout}, #{stderr}")
     window.content.trigger('tool:installed')
   </script>
 
