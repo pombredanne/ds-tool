@@ -12,8 +12,12 @@ cd ~/http
 
 cat > index.html <<EOF
 <html>
+<head>
+    <link rel="stylesheet" href="/vendor/style/bootstrap.min.css">
+    <link rel="stylesheet" href="/style/metro.bootstrap.css">
+</head>
 <body>
-You may ssh in with $(whoami)@box.scraperwiki.com
+You may ssh in with ssh://$(whoami)@box.scraperwiki.com
 </body>
 </html>
 EOF
