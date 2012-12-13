@@ -9,10 +9,11 @@ boxname=$(whoami | sed 's:\.:/:')
 
 (
 cd ~/http
+
 cat > index.html <<EOF
 <html>
 <body>
-You may ssh in with ${boxname}@box.scraperwiki.com
+You may ssh in with $(whoami)@box.scraperwiki.com
 </body>
 </html>
 EOF
