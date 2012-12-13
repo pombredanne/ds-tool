@@ -9,6 +9,7 @@ boxname=$(whoami | sed 's:\.:/:')
 
 (
 cd ~/http
+echo "You may ssh in with ${boxname}@box.scraperwiki.com" > index.html
 if test -e spreadsheet-tool
 then
   # Should only get here in testing.
