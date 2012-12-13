@@ -17,14 +17,16 @@ cat > index.html <<EOF
     <link rel="stylesheet" href="http://x.scraperwiki.com/style/metro.bootstrap.css">
 </head>
 <body style="background: transparent">
-<div class="alert alert-success alert-block container">
-<h4>Blank dataset created!</h4>
-<p>
-Add your SSH key using</p> 
-<pre>curl --data-urlencode sshkey@\$(printf ~/.ssh/id_[rd]sa.pub) --data apikey=<apikey> http://box.scraperwiki.com/${boxname}/sshkeys"</pre>
-<p>
-Then SSH in to <a href="ssh://$(whoami)@box.scraperwiki.com">$(whoami)@box.scraperwiki.com</a>
-</p>
+<div class="container">
+  <div class="alert alert-success alert-block">
+    <h4>Blank dataset created!</h4>
+  </div>
+  <p>
+  Add your SSH key using</p> 
+  <pre>curl --data-urlencode sshkey@\$(printf ~/.ssh/id_[rd]sa.pub) --data apikey=&lt;apikey&gt; http://box.scraperwiki.com/${boxname}/sshkeys"</pre>
+  <p>
+  Then SSH in to <a href="ssh://$(whoami)@box.scraperwiki.com">$(whoami)@box.scraperwiki.com</a>
+  </p>
 </div>
 </body>
 </html>
