@@ -19,7 +19,12 @@ cat > index.html <<EOF
 <body style="background: transparent">
 <div class="alert alert-success alert-block container">
 <h4>Blank dataset created!</h4>
-You may ssh in with <a href="ssh://$(whoami)@box.scraperwiki.com">$(whoami)@box.scraperwiki.com</a>
+<p>
+Add your SSH key using <input value="curl --data-urlencode sshkey@\$(printf ~/.ssh/id_[rd]sa.pub) --data apikey=<apikey> http://box.scraperwiki.com/${boxname}/sshkeys"/>
+</p>
+<p>
+You may SSH in with <a href="ssh://$(whoami)@box.scraperwiki.com">$(whoami)@box.scraperwiki.com</a>
+</p>
 </div>
 </body>
 </html>
