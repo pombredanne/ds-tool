@@ -16,8 +16,11 @@ cat > index.html <<EOF
     <link rel="stylesheet" href="http://x.scraperwiki.com/vendor/style/bootstrap.min.css">
     <link rel="stylesheet" href="http://x.scraperwiki.com/style/metro.bootstrap.css">
 </head>
-<body>
-You may ssh in with ssh://$(whoami)@box.scraperwiki.com
+<body style="background: transparent">
+<div class="alert alert-success alert-block">
+<h4>Blank dataset created!</h4>
+You may ssh in with <a href="ssh://$(whoami)@box.scraperwiki.com">$(whoami)@box.scraperwiki.com</a>
+</div>
 </body>
 </html>
 EOF
