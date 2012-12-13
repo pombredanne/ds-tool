@@ -17,7 +17,7 @@ cat > index.html <<EOF
     <link rel="stylesheet" href="http://x.scraperwiki.com/style/metro.bootstrap.css">
 </head>
 <body style="background: transparent">
-<div class="alert alert-success alert-block">
+<div class="alert alert-success alert-block container">
 <h4>Blank dataset created!</h4>
 You may ssh in with <a href="ssh://$(whoami)@box.scraperwiki.com">$(whoami)@box.scraperwiki.com</a>
 </div>
