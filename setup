@@ -5,10 +5,9 @@ process.chdir '/home/newdataset'
 
 exec './install-extras.sh', (err, stdout, stderr) ->
   console.log """
-  Please rename your dataset!!!!
   <script>
+    $('content').html('<p class="loading">Loading tool</p>')
     window.content.trigger('tool:installed')
   </script>
-
   """
   process.exit 0
