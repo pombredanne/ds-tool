@@ -6,7 +6,7 @@ process.chdir '/home/newdataset'
 exec './install-extras.sh', (err, stdout, stderr) ->
   console.log """
   <script>
-    $('content').html('<p class="loading">Loading tool</p>')
+    $('#content').append('<p class="loading">Loading tool</p>')
     window.content.trigger('tool:installed')
   </script>
   """
