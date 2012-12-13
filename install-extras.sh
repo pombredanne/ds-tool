@@ -23,7 +23,7 @@ cat > index.html <<EOF
   </div>
   <p>
   Add your SSH key using</p> 
-  <pre>curl --data-urlencode sshkey@\$(printf ~/.ssh/id_[rd]sa.pub) --data apikey=&lt;apikey&gt; http://box.scraperwiki.com/${boxname}/sshkeys"</pre>
+  <pre>curl --data-urlencode sshkey@\$(printf ~/.ssh/id_[rd]sa.pub) --data apikey=&lt;apikey&gt; http://box.scraperwiki.com/${boxname}/sshkeys</pre>
   <p>
   Then SSH in to <a href="ssh://$(whoami)@box.scraperwiki.com">$(whoami)@box.scraperwiki.com</a>
   </p>
