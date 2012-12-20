@@ -10,7 +10,7 @@ boxname=$(whoami | sed 's:\.:/:')
 (
 cd ~/http
 
-cat > index.html <<EOF
+cat > newdataset-tool/index.html <<EOF
 <html>
 <head>
     <link rel="stylesheet" href="http://x.scraperwiki.com/vendor/style/bootstrap.min.css">
