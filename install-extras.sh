@@ -77,3 +77,5 @@ printf ']'
 EOF
 chmod +x download
 
+mkdir ~/http/csvdownload-tool
+cp ~/newdataset/templates/csv.html ~/http/csvdownload-tool/index.html
