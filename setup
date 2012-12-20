@@ -7,7 +7,7 @@ exec './install-extras.sh', (err, stdout, stderr) ->
   console.log """
   <p class="loading">Loading tool</p>
   <script>
-    window.content.trigger('tool:installed')
+    Backbone.trigger('tool:installed')
   </script>
   """
   process.exit 0
