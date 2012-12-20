@@ -10,6 +10,8 @@ boxname=$(whoami | sed 's:\.:/:')
 (
 cd ~/http
 
+mkdir newdataset-tool
+
 cat > newdataset-tool/index.html <<EOF
 <html>
 <head>
