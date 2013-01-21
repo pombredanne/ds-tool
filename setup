@@ -1,13 +1,32 @@
-#!/usr/bin/env coffee
-{exec} = require 'child_process'
+#!/bin/sh
 
-process.chdir '/home/newdataset'
+set -e
 
-exec './install-extras.sh', (err, stdout, stderr) ->
-  console.log """
-  <p class="loading">Loading tool</p>
-  <script>
-    Backbone.trigger('tool:installed')
-  </script>
-  """
-  process.exit 0
+boxname=$(whoami | sed 's:\.:/:')
+
+# spreadsheet-install.sh
+# Installs the ScraperWiki spreadsheet tool into this box.
+
+cd ~/http
+
+cat > index.html <<EOF
+<html>
+<head>
+    <link rel="stylesheet" href="http://x.scraperwiki.com/vendor/style/bootstrap.min.css">
+    <link rel="stylesheet" href="http://x.scraperwiki.com/style/metro.bootstrap.css">
+</head>
+<body style="background: transparent">
+<div class="container">
+  <div class="alert alert-success alert-block">
+    <h4>Blank dataset created!</h4>
+  </div>
+  <p>
+  Add your SSH key using</p> 
+  <pre>curl --data-urlencode sshkey@\$(printf ~/.ssh/id_[rd]sa.pub) --data apikey=&lt;apikey&gt; http://box.scraperwiki.com/${boxname}/sshkeys</pre>
+  <p>
+  Then SSH in to <a href="ssh://$(whoami)@box.scraperwiki.com">$(whoami)@box.scraperwiki.com</a>
+  </p>
+</div>
+</body>
+</html>
+EOF
