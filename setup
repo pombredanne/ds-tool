@@ -4,7 +4,7 @@ set -e
 
 cd ~/http
 
-cat > index.html <<EOF
+cat > index.html <<'EOF'
 <!DOCTYPE html>
 <html>
 	<head>
@@ -72,7 +72,7 @@ $(function(){
 	<body>
     <h2>Your new blank dataset awaits!</h2>
     <p><span class="muted">Step 1</span> <strong>Add your SSH key</strong> by running this in your Terminal:</p>
-    <pre>curl --data-urlencode sshkey@\$(printf ~/.ssh/id_[rd]sa.pub) --data apikey=<span class="apikey">[apikey]</span> http://<span class="server">[server]</span>/<span class="box">[box]</span>/sshkeys</pre>
+    <pre>curl --data-urlencode sshkey@$(printf ~/.ssh/id_[rd]sa.pub) --data apikey=<span class="apikey">[apikey]</span> http://<span class="server">[server]</span>/<span class="box">[box]</span>/sshkeys</pre>
     <p><span class="muted">Step 2</span> <strong>SSH in!</strong></p>
     <pre>ssh <span class="box">[box]</span>@<span class="server">[server]</span></pre>
 	</body>
