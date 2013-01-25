@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Code your own dataset!</title>
+  <head>
+    <meta charset="utf-8">
+    <title>Code your own dataset!</title>
     <link rel="stylesheet" href="http://x.scraperwiki.com/vendor/style/bootstrap.min.css">
     <link rel="stylesheet" href="http://x.scraperwiki.com/vendor/style/metro.bootstrap.css">
     <style type="text/css">
@@ -20,8 +20,8 @@ h2 {
 }
 
     </style>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-		<script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script>
 
 function readSettings(success){
   // This function should probably be in a ScraperWiki-supplied js library.
@@ -49,24 +49,24 @@ function showAlert(title, message, level){
 
 $(function(){
   readSettings(function(settings){
-    if('view_apikey' in settings){
+    if('source' in settings && 'apikey' in settings.source){
       // var server = window.location.hostname
       // Temporarily override ugly boxecutor url
       $('.server').text('box.scraperwiki.com')
       $('.box').text(window.location.pathname.split('/')[1])
-      $('.apikey').text(settings['view_apikey'])
+      $('.apikey').text(settings.source.apikey)
     } else {
-      showAlert('What is your ScraperWiki API key?', 'You supplied a JSON object in the URL #fragment, but it doesn&rsquo;t contain a &ldquo;view_apikey&rdquo; key-value pair. Are you sure you followed the right link?', true)
+      showAlert('What is your ScraperWiki API key?', 'You supplied a JSON object in the URL #fragment, but it doesn&rsquo;t contain a &ldquo;source.apikey&rdquo; key-value pair. Are you sure you followed the right link?', true)
     }
   })
 })
     </script>
-	</head>
-	<body>
+  </head>
+  <body>
     <h2>Your new blank dataset awaits!</h2>
     <p><span class="muted">Step 1</span> <strong>Add your SSH key</strong> by running this in your Terminal:</p>
     <pre>curl --data-urlencode sshkey@$(printf ~/.ssh/id_[rd]sa.pub) --data apikey=<span class="apikey">[apikey]</span> http://<span class="server">[server]</span>/<span class="box">[box]</span>/sshkeys</pre>
     <p><span class="muted">Step 2</span> <strong>SSH in!</strong></p>
     <pre>ssh <span class="box">[box]</span>@<span class="server">[server]</span></pre>
-	</body>
+  </body>
 </html>
