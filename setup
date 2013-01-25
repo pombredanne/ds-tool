@@ -1,5 +1,0 @@
-#!/bin/sh
-
-set -e
-
-mv index.html ~/http/
