@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Code your own dataset!</title>
-    <link rel="stylesheet" href="http://x.scraperwiki.com/vendor/style/bootstrap.min.css">
-    <link rel="stylesheet" href="http://x.scraperwiki.com/vendor/style/metro.bootstrap.css">
+    <link rel="stylesheet" href="//x.scraperwiki.com/vendor/style/bootstrap.min.css">
+    <link rel="stylesheet" href="//x.scraperwiki.com/vendor/style/metro.bootstrap.css">
     <style type="text/css">
 
 body {
@@ -20,7 +20,8 @@ h2 {
 }
 
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="//x.scraperwiki.com/js/scraperwiki.js"></script>
     <script>
 
 function readSettings(success){
@@ -34,7 +35,6 @@ function readSettings(success){
   try {
     settings = JSON.parse(decodeURIComponent(hash));
   } catch(e) {
-    return showAlert('Could not read settings from URL #fragment!', 'The settings supplied in your URL #fragment are not a valid JSON object. Are you sure you followed the right link?', true)
   }
   return success(settings)
 }
@@ -48,17 +48,20 @@ function showAlert(title, message, level){
 }
 
 $(function(){
-  readSettings(function(settings){
-    if('source' in settings && 'apikey' in settings.source){
-      // var server = window.location.hostname
-      // Temporarily override ugly boxecutor url
-      $('.server').text('box.scraperwiki.com')
-      $('.box').text(window.location.pathname.split('/')[1])
-      $('.apikey').text(settings.source.apikey)
-    } else {
-      showAlert('What is your ScraperWiki API key?', 'You supplied a JSON object in the URL #fragment, but it doesn&rsquo;t contain a &ldquo;source.apikey&rdquo; key-value pair. Are you sure you followed the right link?', true)
-    }
-  })
+  var settings = scraperwiki.readSettings()
+  if(settings == null) {
+    return showAlert('Could not read settings from URL #fragment!', 'The settings supplied in your URL #fragment are not a valid JSON object. Are you sure you followed the right link?', true)
+  }
+
+  if('source' in settings && 'apikey' in settings.source){
+    // var server = window.location.hostname
+    // Temporarily override ugly boxecutor url
+    $('.server').text('box.scraperwiki.com')
+    $('.box').text(window.location.pathname.split('/')[1])
+    $('.apikey').text(settings.source.apikey)
+  } else {
+    showAlert('What is your ScraperWiki API key?', 'You supplied a JSON object in the URL #fragment, but it doesn&rsquo;t contain a &ldquo;source.apikey&rdquo; key-value pair. Are you sure you followed the right link?', true)
+  }
 })
     </script>
   </head>
