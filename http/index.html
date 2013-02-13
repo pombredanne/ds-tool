@@ -23,19 +23,10 @@ h2 {
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script src="//x.scraperwiki.com/js/scraperwiki.js"></script>
     <script>
-
-function showAlert(title, message, level){
-    // [title] and [message] should be html strings. The first is displayed in bold.
-    // If [level] is a truthful value, the alert is printed in red.
-    level = level || 0;
-    $('<div>').prependTo('body').addClass('alert' + (level ? ' alert-error' : ''))
-    .html('<button type="button" class="close" data-dismiss="alert">×</button> <strong>' + title +'</strong> ' + message)
-}
-
 $(function(){
   var settings = scraperwiki.readSettings()
   if(settings == null) {
-    return showAlert('Could not read settings from URL #fragment!', 'The settings supplied in your URL #fragment are not a valid JSON object. Are you sure you followed the right link?', true)
+    return scraperwiki.alert('Could not read settings from URL #fragment!', 'The settings supplied in your URL #fragment are not a valid JSON object. Are you sure you followed the right link?', true)
   }
 
   if('source' in settings && 'apikey' in settings.source){
@@ -45,7 +36,7 @@ $(function(){
     $('.box').text(window.location.pathname.split('/')[1])
     $('.apikey').text(settings.source.apikey)
   } else {
-    showAlert('What is your ScraperWiki API key?', 'You supplied a JSON object in the URL #fragment, but it doesn&rsquo;t contain a &ldquo;source.apikey&rdquo; key-value pair. Are you sure you followed the right link?', true)
+    scraperwiki.alert('What is your ScraperWiki API key?', 'You supplied a JSON object in the URL #fragment, but it doesn&rsquo;t contain a &ldquo;source.apikey&rdquo; key-value pair. Are you sure you followed the right link?', true)
   }
 })
     </script>
