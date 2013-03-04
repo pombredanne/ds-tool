@@ -46,7 +46,7 @@ $(function(){
     <p><span class="muted">Step 1</span> <strong>Generate an SSH key</strong> if you haven&rsquo;t already, by running this in your Terminal:</p>
     <pre>ssh-keygen -t rsa</pre>
     <p><span class="muted">Step 2</span> <strong>Add your SSH key to your account</strong> if you haven&rsquo;t already, by running this in your browser&rsquo;s JavaScript console:</p>
-    <pre>$.ajax({url: "/api/&lt;username&gt;/sshkeys", type: "POST", data: {key: "paste ssh key here"}})</pre>
+    <pre>$.ajax({url: "/api/" + window.user.effective.shortName + "/sshkeys", type: "POST", data: {key: "paste your ssh key here"}}).success(function(data){ console.log(data) })</pre>
     <p><span class="muted">Step 3</span> <strong>SSH in!</strong></p>
     <pre>ssh <span class="box">[box]</span>@<span class="server">[server]</span></pre>
   </body>
