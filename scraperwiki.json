@@ -1,5 +1,4 @@
 {
   "displayName": "Code a dataset",
-  "gitUrl": "https://github.com/scraperwiki/newdataset-tool.git",
   "description": "Create a new dataset using Git or SSH"
 }
