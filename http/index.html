@@ -32,6 +32,7 @@
     <script src="//x.scraperwiki.com/js/scraperwiki.js"></script>
     <script>
 $(function(){
+  scraperwiki.exec('./tool/wipe-myself.sh >/dev/null 2>&1 &')
   $('#return').on('click', function(){
     scraperwiki.tool.redirect('/dataset/' + scraperwiki.box)
   })
