@@ -1,4 +1,6 @@
 {
-  "displayName": "Code a dataset",
-  "description": "Create a new dataset using Git or SSH"
+  "displayName": "Code your own tool",
+  "description": "Create a new dataset using Git or SSH",
+  "icon": "https://s3-eu-west-1.amazonaws.com/sw-icons/tool-icon-code.png",
+  "color": "#555"
 }
