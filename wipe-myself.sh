@@ -1,8 +1,10 @@
 #!/bin/bash
 
-cp tool/http/index.html .
-rm tool http
-mkdir -p tool/http
-ln -s tool/http
-mv index.html tool/http
+rm -fr tool/.git
+rm tool/scraperwiki.json
+rm tool/wipe-myself.sh
+rm tool/README.md
+rm tool/LICENCE
+
 sed -i 's/^.*wipe-myself.sh.*$//' tool/http/index.html
+
