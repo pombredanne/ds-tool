@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Code your own dataset!</title>
+    <title>ScraperWiki Data Services: About this dataset</title>
     <link rel="stylesheet" href="//scraperwiki.com/vendor/style/bootstrap.min.css">
     <link rel="stylesheet" href="//scraperwiki.com/style/scraperwiki.css">
     <style type="text/css">
@@ -20,7 +20,10 @@
       color: inherit;
       margin: 10px 0;
     }
-    #return { cursor: pointer; }
+    #cog {
+      vertical-align: -2px;
+      margin: 0 3px;
+    }
     #help {
       margin-left: 5px;
       font-size: 0.7em;
@@ -33,9 +36,6 @@
     <script>
 $(function(){
   scraperwiki.exec('./tool/wipe-myself.sh >/dev/null 2>&1 &'); scraperwiki.tool.rename('Untitled dataset')
-  $('#return').on('click', function(){
-    scraperwiki.tool.redirect('/dataset/' + scraperwiki.box)
-  })
   $('#help').on('click', function(){
     scraperwiki.tool.redirect('/docs/developer/')
   })
@@ -49,7 +49,7 @@ $(function(){
     <div class="alert interesting">
       <h4>To write code in this dataset:</h4>
       <ol>
-        <li><a id="return">Go to this dataset&rsquo;s main page</a>.</li>
+        <li>Click the <img id="cog" src="https://scraperwiki.com/image/tile-options-grey.png" width="26" height="16"> icon, above.</li>
         <li>Click the <strong>SSH in</strong> link.</li>
       </ol>
     </div>

@@ -1,6 +1,6 @@
 {
-  "displayName": "Code your own tool",
-  "description": "Create a new dataset using Git or SSH",
-  "icon": "https://s3-eu-west-1.amazonaws.com/sw-icons/tool-icon-code.png",
+  "displayName": "About this dataset",
+  "description": "A blank dataset for ScraperWiki Data Services to use",
+  "icon": "https://s3-eu-west-1.amazonaws.com/sw-icons/tool-icon-ds.png",
   "color": "#555"
 }
